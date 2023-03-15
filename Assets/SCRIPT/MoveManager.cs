@@ -8,6 +8,7 @@ public class MoveManager : MonoBehaviour
     public Vector2 target;
 
     public int moveSpeed = 10;
+    private int spawnCount = 5;
 
     public GameObject enemy;
     public Transform Player;
@@ -18,7 +19,8 @@ public class MoveManager : MonoBehaviour
     {
         //target = transform.position;
 
-        InvokeRepeating("SpawnEnemy", 2.0f, 2.0f);
+          InvokeRepeating("SpawnEnemy", 2.0f, 2.0f);
+       
     }
 
     // Update is called once per frame
@@ -35,7 +37,12 @@ public class MoveManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        GameObject spawnedEnemy = Instantiate(enemy);
-        spawnedEnemy.transform.position = new Vector2(UnityEngine.Random.Range(-10, 10), UnityEngine.Random.Range(-5, 5));
+ 
+        if (spawnCount > 0)
+        {
+            spawnCount--;
+            GameObject spawnedEnemy = Instantiate(enemy);
+            spawnedEnemy.transform.position = new Vector2(UnityEngine.Random.Range(-10, 10), UnityEngine.Random.Range(-5, 5));
+        }
     }
 }

@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator anim;
+    private int health = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +42,22 @@ public class PlayerController : MonoBehaviour
         transform.position = position;
 
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Slime"))
+        {
 
+            Debug.Log("SLime touched me!");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Slime"))
+        {
+            health -= 10;
+
+            Debug.Log("SLime touched me!");
+        }
+    }
 }

@@ -12,13 +12,14 @@ public class MoveToPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        
         moveSpeed = Random.Range(1, 5);
     }
 
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.Find("strawberry");
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
     }
 }
