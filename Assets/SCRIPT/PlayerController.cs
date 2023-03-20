@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,14 +18,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool playerFront = rb.velocity.x != 0;
-        anim.SetBool("playerFront", playerFront);
+
 
         //Vector2 myVector = new Vector2(10, 20);
         //int wholeNumber;
 
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+
+
+        bool playerFront = (horizontal != 0 || vertical != 0);
+        anim.SetBool("playerFront", playerFront);
+
 
         //Debug.Log(direction);
 

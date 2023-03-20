@@ -21,5 +21,24 @@ public class MoveToPlayer : MonoBehaviour
     {
         player = GameObject.Find("strawberry");
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+
+        if(player.transform.position.x < transform.position.x)
+        {
+            Debug.Log("Moving LEFt");
+        }
+        else if (player.transform.position.x > transform.position.x)
+        {
+            Debug.Log("Moving Right");
+        }
+
+        if (player.transform.position.y < transform.position.y)
+        {
+            Debug.Log("Moving Down");
+        }
+        else if (player.transform.position.y > transform.position.y)
+        {
+            Debug.Log("Moving Up");
+        }
+
     }
 }

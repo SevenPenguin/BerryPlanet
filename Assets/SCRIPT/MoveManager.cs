@@ -19,8 +19,8 @@ public class MoveManager : MonoBehaviour
     {
         //target = transform.position;
 
-          InvokeRepeating("SpawnEnemy", 2.0f, 2.0f);
-       
+        //InvokeRepeating("SpawnEnemy", 1.0f, 2.0f);
+        SpawnEnemy();
     }
 
     // Update is called once per frame
@@ -42,7 +42,7 @@ public class MoveManager : MonoBehaviour
         {
             spawnCount--;
             GameObject spawnedEnemy = Instantiate(enemy);
-            spawnedEnemy.transform.position = new Vector2(UnityEngine.Random.Range(-10, 10), UnityEngine.Random.Range(-5, 5));
+            spawnedEnemy.transform.position = new Vector2(UnityEngine.Random.Range(-10, 10), UnityEngine.Random.Range(8, 17));
         }
     }
 }
