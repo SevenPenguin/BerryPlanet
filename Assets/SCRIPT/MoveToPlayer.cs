@@ -8,6 +8,7 @@ public class MoveToPlayer : MonoBehaviour
     public GameObject player;
     private int moveSpeed;
     public Animator anim;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,12 @@ public class MoveToPlayer : MonoBehaviour
     void Update()
     {
         player = GameObject.Find("strawberry");
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+        if(transform.position.x > player.transform.position.x + 1.7f || transform.position.x < player.transform.position.x - 1.7f)
+        {
+           
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+
+        }
+
     }
 }

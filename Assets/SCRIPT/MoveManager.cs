@@ -42,7 +42,7 @@ public class MoveManager : MonoBehaviour
         {
             spawnCount--;
             GameObject spawnedEnemy = Instantiate(enemy);
-            spawnedEnemy.transform.position = new Vector2(UnityEngine.Random.Range(-10, 10), UnityEngine.Random.Range(-5, 5));
+            spawnedEnemy.transform.position = new Vector2(UnityEngine.Random.Range(-10, 10), UnityEngine.Random.Range(8, 16));
         }
     }
 }

@@ -647,15 +647,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 3.6
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!212 &863501446
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -718,11 +718,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2, y: 2}
+  m_Offset: {x: 0.0992077, y: 0.17161322}
+  m_Size: {x: 1.404754, y: 1.453763}
   m_Direction: 0
 --- !u!114 &863501448
 MonoBehaviour:
@@ -738,6 +738,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 863501445}
   anim: {fileID: 863501449}
+  player: {fileID: 863501443}
+  attackBox: {fileID: 5916797362416223889, guid: 8eff0fd4b9e344b458d4876bb340e43a, type: 3}
 --- !u!95 &863501449
 Animator:
   serializedVersion: 5
@@ -772,8 +774,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0}
   moveSpeed: 10
-  enemy: {fileID: 0}
-  Player: {fileID: 0}
+  enemy: {fileID: 477633183}
+  Player: {fileID: 863501444}
 --- !u!1 &1696218636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4397,8 +4399,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739909363}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1129565, y: 0.068624765, z: 0.18944687}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.1129565, y: 0.0686245, z: 0.18944687}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

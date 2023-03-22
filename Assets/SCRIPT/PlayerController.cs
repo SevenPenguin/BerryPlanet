@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public Animator anim;
     private int health = 100;
+    public GameObject player;
+    public GameObject attackBox;
 
     // Start is called before the first frame update
     void Start()
@@ -32,14 +34,22 @@ public class PlayerController : MonoBehaviour
         Vector2 position = transform.position;
 
         //update the x position of the variable
-        position.x = position.x + (0.02f * horizontal);
-        position.y = position.y + (0.02f * vertical);
+        position.x = position.x + (0.05f * horizontal);
+        position.y = position.y + (0.05f * vertical);
 
         //if (position.x < 10) stay in the camera {}
 
         //update the gameObject position
 
         transform.position = position;
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log("keycode");
+            GameObject attackArea = Instantiate(attackBox);
+            attackArea.transform.position = new Vector2(position.x + 1f, position.y);
+
+        }
+
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -48,6 +58,7 @@ public class PlayerController : MonoBehaviour
         {
 
             Debug.Log("SLime touched me!");
+
         }
     }
 
