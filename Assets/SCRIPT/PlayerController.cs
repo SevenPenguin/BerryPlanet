@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool playerFront = rb.velocity.x != 0;
+        bool playerFront =rb.velocity.x != 0;
         anim.SetBool("playerFront", playerFront);
 
         //Vector2 myVector = new Vector2(10, 20);

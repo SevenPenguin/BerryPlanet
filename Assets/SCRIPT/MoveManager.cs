@@ -13,7 +13,6 @@ public class MoveManager : MonoBehaviour
     public GameObject enemy;
     public Transform Player;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +25,14 @@ public class MoveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-/*        if (Input.GetMouseButtonDown(0))
-        {
-            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        /*        if (Input.GetMouseButtonDown(0))
+                {
+                    target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        }
+                }
 
-        transform.position = Vector2.MoveTowards(transform.position,target, moveSpeed * Time.deltaTime);*/
+                transform.position = Vector2.MoveTowards(transform.position,target, moveSpeed * Time.deltaTime);*/
+        
     }
 
     void SpawnEnemy()
