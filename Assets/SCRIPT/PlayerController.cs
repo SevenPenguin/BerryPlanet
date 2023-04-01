@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool playerFront =rb.velocity.x != 0;
-        anim.SetBool("playerFront", playerFront);
+
+
 
         //Vector2 myVector = new Vector2(10, 20);
         //int wholeNumber;
@@ -28,16 +28,35 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
+        bool playerFront = horizontal != 0 && vertical != 0;
+        anim.SetBool("playerFront", playerFront);
+
         //Debug.Log(direction);
 
         //store positionn of ryan in a variable
         Vector2 position = transform.position;
 
         //update the x position of the variable
-        position.x = position.x + (0.05f * horizontal);
-        position.y = position.y + (0.05f * vertical);
+        
+       
 
-        //if (position.x < 10) stay in the camera {}
+        if (position.x < 10 && horizontal > 0)
+        {
+            position.x = position.x + (0.05f * horizontal);
+        }
+        else if (position.x > -10 && horizontal < 0)
+        {
+            position.x = position.x + (0.05f * horizontal);
+        }
+
+        if (position.y < 18 && vertical > 0)
+        {
+            position.y = position.y + (0.05f * vertical);
+        }
+        else if (position.y > 8 && vertical < 0)
+        {
+            position.y = position.y + (0.05f * vertical);
+        }
 
         //update the gameObject position
 

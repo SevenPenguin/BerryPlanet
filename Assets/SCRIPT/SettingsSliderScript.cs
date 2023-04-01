@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingsSliderScript : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
 
-    [SerializeField] private TextMeshProUGUI _sliderText;
+    [SerializeField] private TMP_Text _sliderText;
     // Start is called before the first frame update
     void Start()
     {

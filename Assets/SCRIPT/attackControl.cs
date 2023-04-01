@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,16 @@ using UnityEngine;
 public class attackControl : MonoBehaviour
 {
 
-    void OnCollisionEnter2D(Collision2D col)
+    public BoxCollider2D attackBox;
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("col.gameObject.tag");
-        Debug.Log(col.gameObject.tag);
-        if (col.gameObject.tag == "Slime")
+        Collider2D col = collision.gameObject.GetComponent<Collider2D>();
+        Debug.Log(collision.gameObject.tag);
+        if (attackBox.IsTouching(col) && collision.gameObject.CompareTag("Slime"))
         {
-            Debug.Log("mbn nb nb n");
-            Destroy(col.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 
@@ -20,7 +23,7 @@ public class attackControl : MonoBehaviour
     void Start()
     {
 
-        StartCoroutine(destroyBox());
+        //StartCoroutine(destroyBox());
     }
 
     // Update is called once per frame
